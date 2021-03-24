@@ -74,7 +74,17 @@ npm install
 cd ..
 cd server/
 npm install
+
+# .env tiedoston lisäys tarvittaessa...
+if [ ! -f .env ]
+  then
+    echo "Lisätään .env tiedosto"
+    read -p "Määritä jokin merkkijono salausta varten: " secret
+    echo "SECRET='$secret'" > .env
+fi
+
 cd ..
+
 
 
 echo "Käynnistetään mongo"
